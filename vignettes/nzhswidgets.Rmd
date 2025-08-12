@@ -1,0 +1,52 @@
+---
+title: "`nzhswidgets`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{circletabR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+<style>
+</style>
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+#| echo: false
+library(nzhswidgets)
+```
+
+The `nzhswidgets` package currently provides charting functions, most just opinionated wrappers around the highcharts library. 
+
+## `circletab` 
+
+`circletab` can be used to produce a table where data values are represented as circles of varying size.  Consider the following data frame:
+
+```{r, echo = FALSE}
+set.seed(1234)
+
+d <- data.frame(
+  g1 = rep(c("Foo", "Bar", "Baz"), each = 3),
+  g2 = rep(c("A", "B", "C"), 3), 
+  value = runif(9)
+)
+
+knitr::kable(d, format = "markdown")
+```
+
+Data frames must contain 3 columns.  The first column will be used as row labels, and the second will be used as column labels.  Calling `circletab` produces the following:
+
+```{r}
+circletab(d, max_value = 1)
+```
+
+
+## `barchart`
+
+## `linechart`

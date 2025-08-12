@@ -1,0 +1,13 @@
+dependencies:
+  - name: vue
+    version: 3.5.18
+    src: htmlwidgets/lib/vue-3.5.18
+    script:
+      - vue.global.prod.js
+  - name: nzhswidgets
+    version: 0.0.1
+    src: htmlwidgets/lib/nzhswidgets-0.0.1
+    script:
+      - nzhswidgets.umd.js
+    stylesheet:
+      - nzhswidgets.css

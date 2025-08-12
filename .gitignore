@@ -1,0 +1,10 @@
+.Rproj.user
+nzhswidgets.Rproj
+
+.Rhistory
+.RData
+
+inst/doc
+
+renv
+.Rprofile

@@ -1,0 +1,4 @@
+^renv$
+^renv\.lock$
+^telcowidgets\.Rproj$
+^\.Rproj\.user$
