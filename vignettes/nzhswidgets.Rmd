@@ -49,4 +49,34 @@ circletab(d, max_value = 1)
 
 ## `barchart`
 
+Consider the following test data set, included in the package as `bcdata`:
+
+```{r, echo = FALSE}
+knitr::kable(bcdata, format = "markdown")
+```
+
+To make a bar chart:
+
+```{r}
+barchart(bcdata, ylab = "Percent (%)")
+```
+
+If there is just a single group:
+
+```{r}
+barchart(bcdata[bcdata$g1 == "Dec-20",], ylab = "Percent (%)")
+```
+
 ## `linechart`
+
+Consider the following test data set, included in the package as `tsdata`:
+
+```{r, echo = FALSE}
+knitr::kable(tsdata, format = "markdown")
+```
+
+To make a line (time series, in this case) chart:
+
+```{r}
+linechart(tsdata, title = "Random Walk")
+```

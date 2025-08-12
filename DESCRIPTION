@@ -15,3 +15,6 @@ VignetteBuilder: knitr
 Imports: 
     htmlwidgets,
     jsonlite
+Depends: 
+    R (>= 3.5)
+LazyData: true

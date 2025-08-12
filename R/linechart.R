@@ -39,7 +39,7 @@ reshape_lcdata <- function(data) {
 #' @export
 #'
 #' @examples
-#' ""
+#' linechart(tsdata)
 linechart <- function(
   data,
   title,
@@ -64,7 +64,7 @@ linechart <- function(
     ) |> as.character()
   )
 
-  if (!missing(title)) x[["maxVal"]] <- title
+  if (!missing(title)) x[["title"]] <- title
   if (!missing(magnitude)) x[["magnitude"]] <- magnitude
   if (!missing(xlab)) x[["xlab"]] <- xlab
   if (!missing(ylab)) x[["ylab"]] <- ylab

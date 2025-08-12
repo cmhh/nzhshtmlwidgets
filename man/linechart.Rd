@@ -48,5 +48,5 @@ linechart(
 Line chart
 }
 \examples{
-""
+linechart(tsdata)
 }

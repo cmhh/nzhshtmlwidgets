@@ -39,7 +39,7 @@ reshape_bcdata <- function(data) {
 #' @export
 #'
 #' @examples
-#' ""
+#' barchart(bcdata)
 barchart <- function(
   data,
   title,
@@ -64,7 +64,7 @@ barchart <- function(
     ) |> as.character()
   )
 
-  if (!missing(title)) x[["maxVal"]] <- title
+  if (!missing(title)) x[["title"]] <- title
   if (!missing(magnitude)) x[["magnitude"]] <- magnitude
   if (!missing(xlab)) x[["xlab"]] <- xlab
   if (!missing(ylab)) x[["ylab"]] <- ylab

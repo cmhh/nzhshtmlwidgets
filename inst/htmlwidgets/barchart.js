@@ -19,7 +19,7 @@ HTMLWidgets.widget({
         if (x.title) nps.setAttribute("title", x.title)
         if (x.magnitude) nps.setAttribute(":magnitude", x.magnitude)
         if (x.xlab) nps.setAttribute("xlab", x.xlab)
-        if (x.ylab) nps.setAttribute("ylab", y.xlab)
+        if (x.ylab) nps.setAttribute("ylab", x.ylab)
         if (x.sourceDescription) nps.setAttribute("source-description", x.sourceDescription)
         if (x.sourceUrl) nps.setAttribute("source-url", x.sourceUrl)
         if (x.height) nps.setAttribute(":height", x.height)

@@ -48,5 +48,5 @@ barchart(
 Bar chart
 }
 \examples{
-""
+barchart(bcdata)
 }
