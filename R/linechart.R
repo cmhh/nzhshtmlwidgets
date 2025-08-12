@@ -105,7 +105,7 @@ linechart <- function(
 #' @export
 linechartOutput <- function(outputId, width = '100%', height = '400px'){
   htmlwidgets::shinyWidgetOutput(
-    outputId, 'barchart', width, height, package = 'nzhswidgets'
+    outputId, 'linechart', width, height, package = 'nzhswidgets'
   )
 }
 
