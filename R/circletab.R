@@ -96,7 +96,7 @@ circletab <- function(
 #' @export
 circletabOutput <- function(outputId, width = '100%', height = '400px'){
   htmlwidgets::shinyWidgetOutput(
-    outputId, 'circletab', width, height, package = 'circletabR'
+    outputId, 'circletab', width, height, package = 'nzhswidgets'
   )
 }
 

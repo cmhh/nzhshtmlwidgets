@@ -4,27 +4,29 @@ HTMLWidgets.widget({
   type: 'output',
 
   factory: function(el, width, height) {
-    const container = document.getElementById(el.id)
-
-    const app = Vue.createApp({})
-    app.component('circle-tab', nzhswidgets.CircleTab)
-
-    const nps = document.createElement("circle-tab")
-    container.appendChild(nps)
+    var instance = {};
 
     return {
       renderValue: function(x) {
+        const container = document.getElementById(el.id)
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+        const app = Vue.createApp({})
+        app.component('circle-tab', nzhswidgets.CircleTab)
+        const nps = document.createElement("circle-tab")
         nps.setAttribute(":data", x.data)
         nps.setAttribute(":max-val", x.maxVal)
         nps.setAttribute("fill-color", x.fillColor)
         nps.setAttribute("stroke-width", x.strokeWidth)
         nps.setAttribute("stroke-color", x.strokeColor)
-        app.mount(`#${el.id}`)
+        container.appendChild(nps)
+        this.instance = app.mount(`#${el.id}`)
       },
 
       resize: function(width, height) {},
 
-      app: app
+      instance: instance
     };
   }
 });

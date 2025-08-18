@@ -4,16 +4,17 @@ HTMLWidgets.widget({
   type: 'output',
 
   factory: function(el, width, height) {
-    const container = document.getElementById(el.id)
-
-    const app = Vue.createApp({})
-    app.component('bar-chart', nzhswidgets.BarChart)
-
-    const nps = document.createElement("bar-chart")
-    container.appendChild(nps)
+    var instance = {};
 
     return {
       renderValue: function(x) {
+        const container = document.getElementById(el.id)
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+        const app = Vue.createApp({})
+        app.component('bar-chart', nzhswidgets.BarChart)
+        const nps = document.createElement("bar-chart")
         nps.setAttribute(":series", x.series)
         nps.setAttribute(":categories", x.categories)
         if (x.title) nps.setAttribute("title", x.title)
@@ -26,13 +27,13 @@ HTMLWidgets.widget({
         if (x.width) nps.setAttribute(":width", x.width)
         if (x.palette) nps.setAttribute(":palette", x.palette)
         if (x.patterns) nps.setAttribute(":patterns", x.patterns)
-        
-        app.mount(`#${el.id}`)
+        container.appendChild(nps)
+        this.instance = app.mount(`#${el.id}`)
       },
 
       resize: function(width, height) {},
 
-      app: app
+      instance: instance
     };
   }
 });

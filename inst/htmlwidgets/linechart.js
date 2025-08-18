@@ -4,16 +4,17 @@ HTMLWidgets.widget({
   type: 'output',
 
   factory: function(el, width, height) {
-    const container = document.getElementById(el.id)
-
-    const app = Vue.createApp({})
-    app.component('line-chart', nzhswidgets.LineChart)
-
-    const nps = document.createElement("line-chart")
-    container.appendChild(nps)
+    var instance = {};
 
     return {
       renderValue: function(x) {
+        const container = document.getElementById(el.id)
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+        const app = Vue.createApp({})
+        app.component('line-chart', nzhswidgets.LineChart)
+        const nps = document.createElement("line-chart")
         nps.setAttribute(":x", x.x)
         nps.setAttribute(":y", x.y)
         if (x.title) nps.setAttribute("title", x.title)
@@ -26,13 +27,13 @@ HTMLWidgets.widget({
         if (x.width) nps.setAttribute(":width", x.width)
         if (x.palette) nps.setAttribute(":palette", x.palette)
         if (x.linetype) nps.setAttribute(":linetype", x.linetype)
-        
-        app.mount(`#${el.id}`)
+        container.appendChild(nps)
+        this.instance = app.mount(`#${el.id}`)
       },
 
       resize: function(width, height) {},
 
-      app: app
+      instance: instance
     };
   }
 });
