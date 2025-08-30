@@ -10591,8 +10591,8 @@ const au = {
         height: Ut.height,
         style: {
           fontFamily: "Poppins, Lato, sans-serif"
-        },
-        styledMode: !0
+        }
+        //styledMode: true
       };
       return Ut.width && (yt.width = Ut.width), yt;
     }), De = pi(() => {
@@ -10743,8 +10743,8 @@ const au = {
       width: Ut.width,
       style: {
         fontFamily: "Poppins, Lato, sans-serif"
-      },
-      styledMode: !0
+      }
+      //styledMode: true
     })), we = pi(() => ({
       series: {
         allowPointSelect: !0,
